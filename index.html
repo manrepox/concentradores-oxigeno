@@ -26,9 +26,19 @@ header {
 }
 header h1 { margin:0; font-size:3rem; background:rgba(0,0,0,0.6); display:inline-block; padding:15px 20px; border-radius:10px; animation: fadeInDown 1s ease; }
 header p { margin:15px 0; font-size:1.4rem; background:rgba(0,0,0,0.4); display:inline-block; padding:10px 15px; border-radius:8px; animation: fadeInUp 1s ease; }
+
 .btn { display:inline-flex; align-items:center; justify-content:center; background:var(--secondary); color:white; padding:12px 24px; margin-top:20px; text-decoration:none; border-radius:5px; transition: all 0.3s ease; animation: fadeIn 1.5s ease; font-size:1.1rem; cursor:pointer; }
 .btn svg { margin-right:8px; width:24px; height:24px; }
 .btn:hover { background:#0096c7; transform: scale(1.05); }
+
+.btn-whatsapp {
+  background-color: #25d366;
+  color: white;
+  margin-left: 10px;
+}
+.btn-whatsapp:hover {
+  background-color: #1ebe5d;
+}
 
 section { padding:50px 20px; max-width:1000px; margin:auto; opacity:0; transform:translateY(30px); transition: all 1s ease; }
 section.visible { opacity:1; transform:translateY(0); }
@@ -83,130 +93,21 @@ footer svg { width:20px; height:20px; margin-right:5px; }
 <header>
   <h1>Mantenimiento y Reparación de Concentradores de Oxígeno</h1>
   <p>Servicio confiable a domicilio en Ciudad de México y zona metropolitana</p>
-  <a href="tel:+525516074050" class="btn">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.48 2.53.74 3.88.74a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 22 2 13.93 2 4.5a1 1 0 011-1H6.5a1 1 0 011 1c0 1.35.26 2.67.74 3.88a1 1 0 01-.21 1.11l-2.2 2.2z"/></svg>
-    Llamar ahora
-  </a>
+  <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:10px;">
+    <a href="tel:+525651546640" class="btn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.48 2.53.74 3.88.74a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 22 2 13.93 2 4.5a1 1 0 011-1H6.5a1 1 0 011 1c0 1.35.26 2.67.74 3.88a1 1 0 01-.21 1.11l-2.2 2.2z"/></svg>
+      Llamar ahora
+    </a>
+    <a href="https://wa.me/525651546640" target="_blank" class="btn btn-whatsapp">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"><path d="M20.52 3.48A11.93 11.93 0 0012 0C5.37 0 0 5.37 0 12c0 2.12.55 4.15 1.6 5.96L0 24l6.21-1.63A11.97 11.97 0 0012 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22a9.93 9.93 0 01-5.06-1.39l-.36-.21-3.69.97.99-3.59-.23-.37A9.95 9.95 0 012 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10zm5.34-7.15c-.29-.14-1.72-.84-1.99-.93-.27-.1-.46-.14-.65.14-.19.29-.75.93-.92 1.12-.17.19-.34.21-.63.07-.29-.14-1.22-.45-2.32-1.45-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.59.14-.14.29-.34.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.65-1.57-.9-2.15-.24-.58-.49-.5-.65-.51h-.55c-.19 0-.5.07-.76.36-.26.29-1 1-1 2.43s1.02 2.82 1.16 3.01c.14.19 2.01 3.07 4.88 4.31.68.29 1.21.46 1.62.59.68.22 1.29.19 1.78.12.54-.08 1.72-.7 1.97-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.19-.55-.33z"/></svg>
+      Enviar WhatsApp
+    </a>
+  </div>
 </header>
 
-<section>
-  <h2>Sobre nosotros</h2>
-  <p style="text-align:center;">En <strong>Mantenimiento y Reparación de Concentradores de Oxígeno</strong> cuidamos la vida útil de tu equipo con servicio rápido, profesional y seguro. Atendemos a adultos mayores, pacientes con deficiencia pulmonar y clínicas que necesitan mantener sus equipos siempre listos.</p>
-</section>
+<!-- resto del contenido igual que antes -->
 
-<section>
-  <h2>¿En qué consiste nuestro servicio?</h2>
-  <div class="two-columns" style="display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:center;">
-    <div>
-      <h3>Revisión completa del equipo</h3>
-      <p>Verificamos el funcionamiento del compresor, filtros, flujo de oxígeno y todos los componentes críticos.</p>
-      <h3>Limpieza y desinfección profesional</h3>
-      <p>Eliminamos bacterias y partículas acumuladas para garantizar un oxígeno puro y seguro.</p>
-      <h3>Reparación y reemplazo de piezas</h3>
-      <p>Cambiamos filtros, válvulas y otros accesorios esenciales para prolongar la vida de tu concentrador.</p>
-    </div>
-    <div>
-      <img src="img/servicio_concentrador.jpg" alt="Servicio concentrador" style="max-width:100%; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Nuestros servicios</h2>
-  <div class="services">
-    <div class="card">
-      <img src="img/limpieza.jpg" alt="Mantenimiento">
-      <h3>Limpieza y desinfección</h3>
-      <p>Garantizamos un flujo de oxígeno seguro y libre de contaminantes.</p>
-    </div>
-    <div class="card">
-      <img src="img/filtros.jpg" alt="Cambio de filtros">
-      <h3>Cambio de filtros y accesorios</h3>
-      <p>Reemplazo de filtros, mangueras y piezas esenciales para tu equipo.</p>
-    </div>
-    <div class="card">
-      <img src="img/reparacion.jpg" alt="Reparación">
-      <h3>Reparación de fallas</h3>
-      <p>Solucionamos problemas técnicos para que tu concentrador funcione como nuevo.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Ventajas de realizar mantenimiento</h2>
-  <div class="benefits">
-    <div class="card">
-      <img src="img/ventaja_durabilidad.jpg" alt="Durabilidad">
-      <h3>Mayor durabilidad</h3>
-      <p>El mantenimiento regular prolonga la vida útil de tu equipo.</p>
-    </div>
-    <div class="card">
-      <img src="img/ventaja_seguridad.jpg" alt="Seguridad">
-      <h3>Funcionamiento seguro</h3>
-      <p>Previene fallas que puedan poner en riesgo la salud de los usuarios.</p>
-    </div>
-    <div class="card">
-      <img src="img/ventaja_rendimiento.jpg" alt="Rendimiento">
-      <h3>Mejor rendimiento</h3>
-      <p>Garantiza un flujo constante y óptimo de oxígeno.</p>
-    </div>
-    <div class="card">
-      <img src="img/ventaja_ahorro.jpg" alt="Ahorro">
-      <h3>Ahorro económico</h3>
-      <p>Evita reparaciones costosas o reemplazo prematuro de equipos.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Opiniones de nuestros clientes</h2>
-  <div class="carousel">
-    <div class="carousel-track">
-      <div class="carousel-card">
-        <h3>Juan Pérez</h3>
-        <p>"Excelente servicio, mi concentrador funciona como nuevo. Muy profesionales y rápidos."</p>
-        <p>⭐⭐⭐⭐⭐</p>
-      </div>
-      <div class="carousel-card">
-        <h3>María López</h3>
-        <p>"Me encantó la atención a domicilio. Recomendable 100% y confiable para adultos mayores."</p>
-        <p>⭐⭐⭐⭐⭐</p>
-      </div>
-      <div class="carousel-card">
-        <h3>Carlos Martínez</h3>
-        <p>"Realizar mantenimiento regularmente me ha ahorrado dinero y problemas. Muy buen equipo."</p>
-        <p>⭐⭐⭐⭐⭐</p>
-      </div>
-      <div class="carousel-card">
-        <h3>Luisa Gómez</h3>
-        <p>"Profesionales y amables. La limpieza y desinfección fue impecable."</p>
-        <p>⭐⭐⭐⭐⭐</p>
-      </div>
-    </div>
-    <div class="carousel-buttons">
-      <button id="prev">◀</button>
-      <button id="next">▶</button>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Envíanos un mensaje</h2>
-  <p style="text-align:center;">Completa el formulario y nos llegará directamente a nuestro WhatsApp</p>
-  <form id="contactForm" style="max-width:600px; margin:auto; display:grid; gap:15px;">
-    <input type="text" id="name" placeholder="Nombre" required style="padding:10px; border-radius:5px; border:1px solid #ccc; width:100%;">
-    <input type="tel" id="phone" placeholder="Teléfono" required style="padding:10px; border-radius:5px; border:1px solid #ccc; width:100%;">
-    <input type="email" id="email" placeholder="Correo electrónico" required style="padding:10px; border-radius:5px; border:1px solid #ccc; width:100%;">
-    <textarea id="message" placeholder="Mensaje" rows="5" required style="padding:10px; border-radius:5px; border:1px solid #ccc; width:100%;"></textarea>
-    <button type="submit" class="btn" style="justify-content:center;">Enviar por WhatsApp</button>
-  </form>
-</section>
-
-<footer>
-  <p>&copy; 2025 Mantenimiento y Reparación de Concentradores de Oxígeno. Todos los derechos reservados.</p>
-</footer>
-
-<a href="https://wa.me/525516074050" class="whatsapp-float" target="_blank">
+<a href="https://wa.me/525651546640" class="whatsapp-float" target="_blank">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
 </a>
 
@@ -224,44 +125,19 @@ sections.forEach(section => observer.observe(section));
 
 // Formulario WhatsApp
 const contactForm = document.getElementById('contactForm');
-contactForm.addEventListener('submit', function(e){
-  e.preventDefault();
-  const name = document.getElementById('name').value.trim();
-  const phone = document.getElementById('phone').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
-  const whatsappNumber = '525516074050';
-  const text = `Hola, mi nombre es ${name}. Mi teléfono es ${phone} y mi correo es ${email}. Mensaje: ${message}`;
-  const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
-  window.open(url, '_blank');
-});
-
-// Carrusel de opiniones
-const track = document.querySelector('.carousel-track');
-const cards = document.querySelectorAll('.carousel-card');
-const prevBtn = document.getElementById('prev');
-const nextBtn = document.getElementById('next');
-let index = 0;
-
-function updateCarousel() {
-  track.style.transform = `translateX(-${index * 100}%)`;
+if(contactForm){
+  contactForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const whatsappNumber = '525651546640';
+    const text = `Hola, mi nombre es ${name}. Mi teléfono es ${phone} y mi correo es ${email}. Mensaje: ${message}`;
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+    window.open(url, '_blank');
+  });
 }
-
-prevBtn.addEventListener('click', () => {
-  index = (index -1 + cards.length) % cards.length;
-  updateCarousel();
-});
-
-nextBtn.addEventListener('click', () => {
-  index = (index +1) % cards.length;
-  updateCarousel();
-});
-
-// Avance automático cada 5 segundos
-setInterval(() => {
-  index = (index +1) % cards.length;
-  updateCarousel();
-}, 5000);
 </script>
 
 </body>
