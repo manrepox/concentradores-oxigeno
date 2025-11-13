@@ -1,1093 +1,348 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mantenimiento y Reparación de Concentradores de Oxígeno</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #023e8a;
-            --primary-light: #0077b6;
-            --secondary: #00b4d8;
-            --accent: #ffd60a;
-            --accent-light: #ffea80;
-            --bg: #f8f9fa;
-            --text: #333;
-            --text-light: #666;
-            --white: #ffffff;
-            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            background: var(--bg);
-            color: var(--text);
-            overflow-x: hidden;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header Styles */
-        header {
-            background: linear-gradient(rgba(2, 62, 138, 0.8), rgba(0, 119, 182, 0.8)), url('https://images.unsplash.com/photo-1585435557343-3b092031d5ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-            color: var(--white);
-            padding: 100px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: fadeInDown 1s ease;
-        }
-
-        header p {
-            font-size: 1.4rem;
-            margin-bottom: 30px;
-            animation: fadeInUp 1s ease;
-        }
-
-        .btn-container {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeIn 1.5s ease;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 14px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background: var(--secondary);
-            color: var(--white);
-        }
-
-        .btn-whatsapp {
-            background: #25d366;
-            color: var(--white);
-        }
-
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn i {
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
-
-        /* Section Styles */
-        section {
-            padding: 80px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--secondary);
-            border-radius: 2px;
-        }
-
-        .section-header p {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-
-        .about-text p {
-            margin-bottom: 20px;
-            color: var(--text-light);
-        }
-
-        .about-image {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            height: 400px;
-            background: url('https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* Services Section */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: var(--white);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            text-align: center;
-            padding: 30px 20px;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--accent-light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: var(--primary);
-            font-size: 2rem;
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-
-        .service-card p {
-            color: var(--text-light);
-        }
-
-        /* Benefits Section */
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .benefit-card {
-            background: var(--white);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            text-align: center;
-            padding: 30px 20px;
-            border-top: 5px solid var(--secondary);
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .benefit-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--primary-light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: var(--white);
-            font-size: 1.8rem;
-        }
-
-        .benefit-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-
-        .benefit-card p {
-            color: var(--text-light);
-        }
-
-        /* Service Area Section */
-        .service-area {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: var(--white);
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .service-area .section-header h2 {
-            color: var(--white);
-        }
-
-        .service-area .section-header h2::after {
-            background: var(--accent);
-        }
-
-        .service-area .section-header p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.4rem;
-            margin-bottom: 40px;
-        }
-
-        .service-area-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .service-area-text {
-            text-align: left;
-        }
-
-        .service-area-text h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: var(--accent);
-        }
-
-        .service-area-text ul {
-            list-style-type: none;
-            margin-bottom: 30px;
-        }
-
-        .service-area-text li {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .service-area-text li i {
-            color: var(--accent);
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
-
-        .map-container {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 20px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
-
-        .cdmx-map {
-            width: 100%;
-            height: 300px;
-            background: #e9f5ff;
-            border-radius: 10px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Mapa minimalista de CDMX */
-        .cdmx-outline {
-            position: absolute;
-            top: 10%;
-            left: 10%;
-            width: 80%;
-            height: 80%;
-            background: 
-                /* Forma principal de CDMX */
-                radial-gradient(ellipse at 30% 40%, transparent 0%, transparent 65%, var(--primary-light) 65%, var(--primary-light) 70%, transparent 70%),
-                radial-gradient(ellipse at 70% 60%, transparent 0%, transparent 60%, var(--secondary) 60%, var(--secondary) 65%, transparent 65%),
-                radial-gradient(ellipse at 50% 20%, transparent 0%, transparent 55%, var(--accent) 55%, var(--accent) 60%, transparent 60%);
-            border-radius: 15px;
-            box-shadow: inset 0 0 0 2px var(--primary);
-        }
-
-        .map-marker {
-            position: absolute;
-            width: 12px;
-            height: 12px;
-            background: var(--accent);
-            border-radius: 50%;
-            box-shadow: 0 0 0 4px rgba(255, 214, 10, 0.4);
-            animation: pulse 2s infinite;
-        }
-
-        .map-marker:nth-child(1) { top: 40%; left: 30%; }
-        .map-marker:nth-child(2) { top: 60%; left: 70%; }
-        .map-marker:nth-child(3) { top: 20%; left: 50%; }
-        .map-marker:nth-child(4) { top: 70%; left: 40%; }
-        .map-marker:nth-child(5) { top: 30%; left: 60%; }
-
-        .map-label {
-            position: absolute;
-            bottom: 20px;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            font-weight: bold;
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
-
-        /* Testimonials Section */
-        .testimonials {
-            background: var(--bg);
-            padding: 80px 0;
-        }
-
-        .carousel-container {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-            overflow: hidden;
-            border-radius: 15px;
-        }
-
-        .carousel-track {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            width: 100%;
-        }
-
-        .carousel-card {
-            min-width: 100%;
-            box-sizing: border-box;
-            padding: 40px;
-            background: var(--white);
-            border-radius: 15px;
-            text-align: center;
-            margin: 0;
-            box-shadow: var(--shadow);
-            border-left: 5px solid var(--secondary);
-        }
-
-        .carousel-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-
-        .carousel-card p {
-            margin-bottom: 15px;
-            font-style: italic;
-            line-height: 1.8;
-            color: var(--text-light);
-        }
-
-        .stars {
-            color: var(--accent);
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        .carousel-buttons {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .carousel-buttons button {
-            background: var(--secondary);
-            color: var(--white);
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin: 0 10px;
-            cursor: pointer;
-            transition: var(--transition);
-            font-size: 1.2rem;
-        }
-
-        .carousel-buttons button:hover {
-            background: var(--primary);
-            transform: scale(1.1);
-        }
-
-        .carousel-indicators {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .carousel-indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #ddd;
-            margin: 0 8px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .carousel-indicator.active {
-            background: var(--secondary);
-            transform: scale(1.2);
-        }
-
-        /* Contact Section */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: var(--white);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .form-control:focus {
-            border-color: var(--secondary);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.2);
-        }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary);
-            color: var(--white);
-            padding: 40px 0 20px;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-
-        .footer-logo {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .footer-links a {
-            color: var(--white);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: var(--accent);
-        }
-
-        .copyright {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        /* Floating Buttons */
-        .floating-buttons {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            z-index: 1000;
-        }
-
-        .floating-btn {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.8rem;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            text-decoration: none;
-            position: relative;
-        }
-
-        .floating-btn.whatsapp {
-            background: #25d366;
-        }
-
-        .floating-btn.call {
-            background: var(--secondary);
-        }
-
-        .floating-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .floating-btn::after {
-            content: '';
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            border-radius: 50%;
-            border: 2px solid;
-            opacity: 0.7;
-            animation: pulse 2s infinite;
-        }
-
-        .floating-btn.whatsapp::after {
-            border-color: #25d366;
-        }
-
-        .floating-btn.call::after {
-            border-color: var(--secondary);
-        }
-
-        /* Animations */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.7; }
-            50% { transform: scale(1.1); opacity: 0.4; }
-            100% { transform: scale(1); opacity: 0.7; }
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            header h1 {
-                font-size: 2.8rem;
-            }
-            
-            .about-content, .service-area-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-image {
-                order: -1;
-            }
-            
-            .service-area-text {
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 768px) {
-            header {
-                padding: 80px 20px;
-            }
-            
-            header h1 {
-                font-size: 2.2rem;
-            }
-            
-            header p {
-                font-size: 1.2rem;
-            }
-            
-            .btn-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 300px;
-            }
-            
-            .section-header h2 {
-                font-size: 2rem;
-            }
-            
-            .floating-buttons {
-                bottom: 20px;
-                right: 20px;
-            }
-            
-            .floating-btn {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
-            }
-            
-            .service-area .section-header p {
-                font-size: 1.2rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            header h1 {
-                font-size: 1.8rem;
-            }
-            
-            header p {
-                font-size: 1rem;
-            }
-            
-            section {
-                padding: 60px 0;
-            }
-            
-            .section-header {
-                margin-bottom: 40px;
-            }
-            
-            .contact-form {
-                padding: 30px 20px;
-            }
-            
-            .floating-btn {
-                width: 55px;
-                height: 55px;
-                font-size: 1.3rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mantenimiento y Reparación de Concentradores de Oxígeno</title>
+<style>
+:root {
+  --primary: #023e8a;
+  --secondary: #00b4d8;
+  --accent: #ffd60a;
+  --bg: #f8f9fa;
+  --text: #333;
+}
+body { font-family: Arial, sans-serif; margin:0; padding:0; line-height:1.6; background:var(--bg); color:var(--text); overflow-x:hidden; }
+
+header {
+  background: var(--primary);
+  color:white;
+  padding:80px 20px;
+  text-align:center;
+  background-image: url("img/header.jpg");
+  background-size:cover;
+  background-position:center;
+  position: relative;
+}
+header h1 { margin:0; font-size:3rem; background:rgba(0,0,0,0.6); display:inline-block; padding:15px 20px; border-radius:10px; animation: fadeInDown 1s ease; }
+header p { margin:15px 0; font-size:1.4rem; background:rgba(0,0,0,0.4); display:inline-block; padding:10px 15px; border-radius:8px; animation: fadeInUp 1s ease; }
+.btn { display:inline-flex; align-items:center; justify-content:center; background:var(--secondary); color:white; padding:12px 24px; margin-top:20px; text-decoration:none; border-radius:5px; transition: all 0.3s ease; animation: fadeIn 1.5s ease; font-size:1.1rem; cursor:pointer; }
+.btn svg { margin-right:8px; width:24px; height:24px; }
+.btn:hover { background:#0096c7; transform: scale(1.05); }
+
+.header-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+section { padding:50px 20px; max-width:1000px; margin:auto; opacity:0; transform:translateY(30px); transition: all 1s ease; }
+section.visible { opacity:1; transform:translateY(0); }
+section h2 { color:var(--primary); margin-bottom:20px; text-align:center; }
+section p { margin-bottom:15px; }
+
+.services, .benefits { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px; }
+.card { background:white; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.15); padding:20px; text-align:center; transition: transform 0.3s ease; }
+.card:hover { transform: translateY(-5px) scale(1.02); }
+.card img { max-width:100%; border-radius:10px; margin-bottom:15px; }
+
+footer { background:var(--primary); color:white; text-align:center; padding:15px; margin-top:40px; }
+footer a { color:white; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; margin:0 5px; font-size:1.1rem; }
+footer svg { width:20px; height:20px; margin-right:5px; }
+
+.whatsapp-float { position:fixed; width:90px; height:90px; bottom:20px; right:20px; background-color:#25d366; color:#fff; border-radius:50%; text-align:center; font-size:36px; box-shadow:2px 2px 5px #999; z-index:100; display:flex; align-items:center; justify-content:center; transition: transform 0.3s ease; }
+.whatsapp-float:hover { transform: scale(1.1); }
+.whatsapp-float img { width:55px; height:55px; }
+
+.call-float { position:fixed; width:90px; height:90px; bottom:120px; right:20px; background-color:#0077b6; color:#fff; border-radius:50%; text-align:center; font-size:36px; box-shadow:2px 2px 5px #999; z-index:100; display:flex; align-items:center; justify-content:center; transition: transform 0.3s ease; }
+.call-float:hover { transform: scale(1.1); }
+.call-float img { width:55px; height:55px; }
+
+.carousel { position:relative; max-width:600px; margin:auto; overflow:hidden; border-radius:10px; }
+.carousel-track { display:flex; transition: transform 0.5s ease-in-out; }
+.carousel-card { min-width:100%; box-sizing:border-box; padding:30px; background:white; margin-right:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1); border-radius:10px; text-align:center; border-left: 5px solid var(--secondary); }
+.carousel-card h3 { margin-bottom:10px; color: var(--primary); font-size: 1.4rem; }
+.carousel-card p { margin-bottom:10px; font-style:italic; }
+.carousel-buttons { text-align:center; margin-top:20px; }
+.carousel-buttons button { background:var(--secondary); color:white; border:none; padding:10px 15px; margin:0 5px; border-radius:5px; cursor:pointer; transition: all 0.3s; font-weight: bold; }
+.carousel-buttons button:hover { transform: scale(1.1); background: var(--primary); }
+.carousel-indicators { display: flex; justify-content: center; margin-top: 15px; }
+.carousel-indicator { width: 12px; height: 12px; border-radius: 50%; background: #ccc; margin: 0 5px; cursor: pointer; transition: background 0.3s; }
+.carousel-indicator.active { background: var(--secondary); }
+
+.domicilio-badge {
+  background: var(--accent);
+  color: #000;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  display: inline-block;
+  margin: 10px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  animation: pulse 2s infinite;
+}
+
+@keyframes fadeInDown { from {opacity:0; transform: translateY(-20px);} to {opacity:1; transform: translateY(0);} }
+@keyframes fadeInUp { from {opacity:0; transform: translateY(20px);} to {opacity:1; transform: translateY(0);} }
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+@keyframes pulse { 
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+  header h1 { font-size:2.2rem; padding:12px 15px; }
+  header p { font-size:1.1rem; padding:8px 10px; }
+  .btn { font-size:1rem; padding:10px 20px; }
+  .whatsapp-float, .call-float { width:75px; height:75px; font-size:32px; }
+  .whatsapp-float img, .call-float img { width:45px; height:45px; }
+  .two-columns { grid-template-columns:1fr !important; }
+  .header-buttons { flex-direction: column; align-items: center; }
+}
+@media (max-width: 480px) {
+  header h1 { font-size:1.8rem; padding:10px 12px; }
+  header p { font-size:1rem; padding:6px 8px; }
+  .btn { font-size:0.95rem; padding:8px 16px; }
+  .whatsapp-float, .call-float { width:65px; height:65px; font-size:28px; }
+  .whatsapp-float img, .call-float img { width:40px; height:40px; }
+  .carousel-card { padding: 20px; }
+}
+</style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <h1>Mantenimiento y Reparación de Concentradores de Oxígeno</h1>
-                <p>Servicio confiable a domicilio en Ciudad de México y zona metropolitana</p>
-                <div class="btn-container">
-                    <a href="tel:+525651546640" class="btn btn-primary">
-                        <i class="fas fa-phone-alt"></i> Llamar ahora
-                    </a>
-                    <a href="https://wa.me/525651546640" class="btn btn-whatsapp">
-                        <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="section-header">
-                <h2>Sobre nosotros</h2>
-                <p>En <strong>Mantenimiento y Reparación de Concentradores de Oxígeno</strong> cuidamos la vida útil de tu equipo con servicio rápido, profesional y seguro.</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Expertos en concentradores de oxígeno</h3>
-                    <p>Atendemos a adultos mayores, pacientes con deficiencia pulmonar y clínicas que necesitan mantener sus equipos siempre listos para un funcionamiento óptimo.</p>
-                    <p>Nuestro equipo de técnicos especializados cuenta con años de experiencia en el mantenimiento y reparación de concentradores de oxígeno de todas las marcas y modelos.</p>
-                    <p>Ofrecemos servicio a domicilio en toda la Ciudad de México y zona metropolitana, garantizando una respuesta rápida y eficiente para que no interrumpas tu tratamiento.</p>
-                </div>
-                <div class="about-image">
-                    <!-- Imagen de concentrador de oxígeno -->
-                </div>
-            </div>
-        </div>
-    </section>
+<header>
+  <h1>Mantenimiento y Reparación de Concentradores de Oxígeno</h1>
+  <p>Servicio confiable a domicilio en Ciudad de México y zona metropolitana</p>
+  
+  <div class="domicilio-badge">¡SERVICIO A DOMICILIO SIN COSTO ADICIONAL!</div>
+  
+  <div class="header-buttons">
+    <a href="tel:+525651546640" class="btn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.48 2.53.74 3.88.74a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 22 2 13.93 2 4.5a1 1 0 011-1H6.5a1 1 0 011 1c0 1.35.26 2.67.74 3.88a1 1 0 01-.21 1.11l-2.2 2.2z"/></svg>
+      Llamar ahora
+    </a>
+    <a href="https://wa.me/525651546640" class="btn" style="background-color: #25d366;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893-.001-3.189-1.262-6.189-3.553-8.449"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</header>
 
-    <!-- Services Section -->
-    <section id="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>Nuestros servicios</h2>
-                <p>Ofrecemos una gama completa de servicios para mantener tu concentrador de oxígeno en perfecto estado</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-spray-can"></i>
-                    </div>
-                    <h3>Limpieza y desinfección</h3>
-                    <p>Garantizamos un flujo de oxígeno seguro y libre de contaminantes mediante una limpieza profunda y desinfección profesional.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-filter"></i>
-                    </div>
-                    <h3>Cambio de filtros y accesorios</h3>
-                    <p>Reemplazo de filtros, mangueras y piezas esenciales para mantener el rendimiento óptimo de tu equipo.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3>Reparación de fallas</h3>
-                    <p>Diagnóstico y solución de problemas técnicos para que tu concentrador funcione como nuevo con garantía en todas las reparaciones.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section>
+  <h2>Sobre nosotros</h2>
+  <p style="text-align:center;">En <strong>Mantenimiento y Reparación de Concentradores de Oxígeno</strong> cuidamos la vida útil de tu equipo con servicio rápido, profesional y seguro. Atendemos a adultos mayores, pacientes con deficiencia pulmonar y clínicas que necesitan mantener sus equipos siempre listos.</p>
+  <p style="text-align:center; font-weight: bold; color: var(--primary);">Ofrecemos <span class="domicilio-badge">servicio a domicilio</span> para mayor comodidad y seguridad de nuestros clientes.</p>
+</section>
 
-    <!-- Service Area Section -->
-    <section class="service-area">
-        <div class="container">
-            <div class="section-header">
-                <h2>Servicio a Domicilio</h2>
-                <p>Llegamos hasta tu hogar en toda la Ciudad de México y zona metropolitana</p>
-            </div>
-            <div class="service-area-content">
-                <div class="service-area-text">
-                    <h3>Cobertura en toda la CDMX</h3>
-                    <p>Nuestro servicio a domicilio abarca todas las alcaldías y municipios metropolitanos:</p>
-                    <ul>
-                        <li><i class="fas fa-check-circle"></i> Todas las alcaldías de la CDMX</li>
-                        <li><i class="fas fa-check-circle"></i> Municipios conurbados del Estado de México</li>
-                        <li><i class="fas fa-check-circle"></i> Zona metropolitana del Valle de México</li>
-                        <li><i class="fas fa-check-circle"></i> Servicio urgente disponible</li>
-                    </ul>
-                    <p>Contamos con unidades móviles equipadas para atenderte donde te encuentres, con respuesta en menos de 24 horas.</p>
-                </div>
-                <div class="map-container">
-                    <div class="cdmx-map">
-                        <div class="cdmx-outline"></div>
-                        <div class="map-marker"></div>
-                        <div class="map-marker"></div>
-                        <div class="map-marker"></div>
-                        <div class="map-marker"></div>
-                        <div class="map-marker"></div>
-                        <div class="map-label">CDMX y Zona Metropolitana</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section id="benefits">
-        <div class="container">
-            <div class="section-header">
-                <h2>Ventajas de realizar mantenimiento</h2>
-                <p>Mantener tu concentrador en óptimas condiciones ofrece múltiples beneficios</p>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-calendar-plus"></i>
-                    </div>
-                    <h3>Mayor durabilidad</h3>
-                    <p>El mantenimiento regular prolonga la vida útil de tu equipo, evitando su reemplazo prematuro.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Funcionamiento seguro</h3>
-                    <p>Previene fallas que puedan poner en riesgo la salud de los usuarios durante el tratamiento.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-tachometer-alt"></i>
-                    </div>
-                    <h3>Mejor rendimiento</h3>
-                    <p>Garantiza un flujo constante y óptimo de oxígeno para una terapia respiratoria efectiva.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-piggy-bank"></i>
-                    </div>
-                    <h3>Ahorro económico</h3>
-                    <p>Evita reparaciones costosas o reemplazo prematuro de equipos, ahorrando dinero a largo plazo.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2>Opiniones de nuestros clientes</h2>
-                <p>La satisfacción de nuestros clientes es nuestra mayor recompensa</p>
-            </div>
-            <div class="carousel-container">
-                <div class="carousel-track">
-                    <div class="carousel-card">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h3>Juan Pérez</h3>
-                        <p>"Excelente servicio, mi concentrador funciona como nuevo. Muy profesionales y rápidos en la atención. Los recomiendo ampliamente."</p>
-                    </div>
-                    <div class="carousel-card">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h3>María López</h3>
-                        <p>"Me encantó la atención a domicilio. Recomendable 100% y confiable para adultos mayores. Muy respetuosos y cuidadosos con el equipo."</p>
-                    </div>
-                    <div class="carousel-card">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h3>Carlos Martínez</h3>
-                        <p>"Realizar mantenimiento regularmente me ha ahorrado dinero y problemas. Muy buen equipo de trabajo, puntuales y eficientes."</p>
-                    </div>
-                    <div class="carousel-card">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h3>Luisa Gómez</h3>
-                        <p>"Profesionales y amables. La limpieza y desinfección fue impecable. Mi concentrador nunca había funcionado mejor."</p>
-                    </div>
-                </div>
-                <div class="carousel-buttons">
-                    <button id="prev"><i class="fas fa-chevron-left"></i></button>
-                    <button id="next"><i class="fas fa-chevron-right"></i></button>
-                </div>
-                <div class="carousel-indicators">
-                    <div class="carousel-indicator active" data-index="0"></div>
-                    <div class="carousel-indicator" data-index="1"></div>
-                    <div class="carousel-indicator" data-index="2"></div>
-                    <div class="carousel-indicator" data-index="3"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Envíanos un mensaje</h2>
-                <p>Completa el formulario y nos llegará directamente a nuestro WhatsApp</p>
-            </div>
-            <form id="contactForm" class="contact-form">
-                <div class="form-group">
-                    <label for="name">Nombre completo</label>
-                    <input type="text" id="name" class="form-control" placeholder="Ingresa tu nombre" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Teléfono</label>
-                    <input type="tel" id="phone" class="form-control" placeholder="Ingresa tu teléfono" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Correo electrónico</label>
-                    <input type="email" id="email" class="form-control" placeholder="Ingresa tu correo electrónico" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Mensaje</label>
-                    <textarea id="message" class="form-control" placeholder="Describe tu consulta o requerimiento" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">
-                    <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
-                </button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">Oxígeno Confiable</div>
-                <div class="footer-links">
-                    <a href="#about">Sobre nosotros</a>
-                    <a href="#services">Servicios</a>
-                    <a href="#benefits">Ventajas</a>
-                    <a href="#contact">Contacto</a>
-                </div>
-                <p>Servicio a domicilio en CDMX y zona metropolitana</p>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 Mantenimiento y Reparación de Concentradores de Oxígeno. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Floating Buttons -->
-    <div class="floating-buttons">
-        <a href="https://wa.me/525651546640" class="floating-btn whatsapp" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="tel:+525651546640" class="floating-btn call">
-            <i class="fas fa-phone-alt"></i>
-        </a>
+<section>
+  <h2>¿En qué consiste nuestro servicio?</h2>
+  <div class="two-columns" style="display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:center;">
+    <div>
+      <h3>Revisión completa del equipo</h3>
+      <p>Verificamos el funcionamiento del compresor, filtros, flujo de oxígeno y todos los componentes críticos.</p>
+      <h3>Limpieza y desinfección profesional</h3>
+      <p>Eliminamos bacterias y partículas acumuladas para garantizar un oxígeno puro y seguro.</p>
+      <h3>Reparación y reemplazo de piezas</h3>
+      <p>Cambiamos filtros, válvulas y otros accesorios esenciales para prolongar la vida de tu concentrador.</p>
+      <h3>Servicio a domicilio</h3>
+      <p>Nos desplazamos hasta tu hogar u hospital para realizar el mantenimiento sin que tengas que mover el equipo.</p>
     </div>
+    <div>
+      <img src="img/servicio_concentrador.jpg" alt="Servicio concentrador" style="max-width:100%; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+    </div>
+  </div>
+</section>
 
-    <script>
-        // Animación al hacer scroll
-        const sections = document.querySelectorAll('section');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting){
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-        sections.forEach(section => observer.observe(section));
+<section>
+  <h2>Nuestros servicios</h2>
+  <div class="services">
+    <div class="card">
+      <img src="img/limpieza.jpg" alt="Mantenimiento">
+      <h3>Limpieza y desinfección</h3>
+      <p>Garantizamos un flujo de oxígeno seguro y libre de contaminantes.</p>
+    </div>
+    <div class="card">
+      <img src="img/filtros.jpg" alt="Cambio de filtros">
+      <h3>Cambio de filtros y accesorios</h3>
+      <p>Reemplazo de filtros, mangueras y piezas esenciales para tu equipo.</p>
+    </div>
+    <div class="card">
+      <img src="img/reparacion.jpg" alt="Reparación">
+      <h3>Reparación de fallas</h3>
+      <p>Solucionamos problemas técnicos para que tu concentrador funcione como nuevo.</p>
+    </div>
+    <div class="card">
+      <img src="img/domicilio.jpg" alt="Servicio a domicilio">
+      <h3>Servicio a domicilio</h3>
+      <p>Llegamos hasta tu hogar u hospital para realizar el mantenimiento sin costo adicional.</p>
+    </div>
+  </div>
+</section>
 
-        // Formulario WhatsApp
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', function(e){
-            e.preventDefault();
-            const name = document.getElementById('name').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-            const whatsappNumber = '525651546640';
-            const text = `Hola, mi nombre es ${name}. Mi teléfono es ${phone} y mi correo es ${email}. Mensaje: ${message}`;
-            const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
-            window.open(url, '_blank');
-        });
+<section>
+  <h2>Ventajas de realizar mantenimiento</h2>
+  <div class="benefits">
+    <div class="card">
+      <img src="img/ventaja_durabilidad.jpg" alt="Durabilidad">
+      <h3>Mayor durabilidad</h3>
+      <p>El mantenimiento regular prolonga la vida útil de tu equipo.</p>
+    </div>
+    <div class="card">
+      <img src="img/ventaja_seguridad.jpg" alt="Seguridad">
+      <h3>Funcionamiento seguro</h3>
+      <p>Previene fallas que puedan poner en riesgo la salud de los usuarios.</p>
+    </div>
+    <div class="card">
+      <img src="img/ventaja_rendimiento.jpg" alt="Rendimiento">
+      <h3>Mejor rendimiento</h3>
+      <p>Garantiza un flujo constante y óptimo de oxígeno.</p>
+    </div>
+    <div class="card">
+      <img src="img/ventaja_ahorro.jpg" alt="Ahorro">
+      <h3>Ahorro económico</h3>
+      <p>Evita reparaciones costosas o reemplazo prematuro de equipos.</p>
+    </div>
+  </div>
+</section>
 
-        // Carrusel de opiniones
-        const track = document.querySelector('.carousel-track');
-        const cards = document.querySelectorAll('.carousel-card');
-        const prevBtn = document.getElementById('prev');
-        const nextBtn = document.getElementById('next');
-        const indicators = document.querySelectorAll('.carousel-indicator');
-        let index = 0;
+<section>
+  <h2>Opiniones de nuestros clientes</h2>
+  <div class="carousel">
+    <div class="carousel-track">
+      <div class="carousel-card">
+        <h3>Juan Pérez</h3>
+        <p>"Excelente servicio, mi concentrador funciona como nuevo. Muy profesionales y rápidos. El servicio a domicilio fue muy conveniente."</p>
+        <p>⭐⭐⭐⭐⭐</p>
+      </div>
+      <div class="carousel-card">
+        <h3>María López</h3>
+        <p>"Me encantó la atención a domicilio. Recomendable 100% y confiable para adultos mayores. No tuve que mover el equipo."</p>
+        <p>⭐⭐⭐⭐⭐</p>
+      </div>
+      <div class="carousel-card">
+        <h3>Carlos Martínez</h3>
+        <p>"Realizar mantenimiento regularmente me ha ahorrado dinero y problemas. Muy buen equipo y el servicio a domicilio es un plus."</p>
+        <p>⭐⭐⭐⭐⭐</p>
+      </div>
+      <div class="carousel-card">
+        <h3>Luisa Gómez</h3>
+        <p>"Profesionales y amables. La limpieza y desinfección fue impecable. El servicio a domicilio me salvó mucho tiempo."</p>
+        <p>⭐⭐⭐⭐⭐</p>
+      </div>
+    </div>
+    <div class="carousel-buttons">
+      <button id="prev">◀ Anterior</button>
+      <button id="next">Siguiente ▶</button>
+    </div>
+    <div class="carousel-indicators">
+      <div class="carousel-indicator active" data-index="0"></div>
+      <div class="carousel-indicator" data-index="1"></div>
+      <div class="carousel-indicator" data-index="2"></div>
+      <div class="carousel-indicator" data-index="3"></div>
+    </div>
+  </div>
+</section>
 
-        function updateCarousel() {
-            // Centrar correctamente el carrusel
-            track.style.transform = `translateX(-${index * 100}%)`;
-            
-            // Actualizar indicadores
-            indicators.forEach((indicator, i) => {
-                if (i === index) {
-                    indicator.classList.add('active');
-                } else {
-                    indicator.classList.remove('active');
-                }
-            });
-        }
+<section>
+  <h2>Envíanos un mensaje</h2>
+  <p style="text-align:center;">Completa el formulario y nos llegará directamente a nuestro WhatsApp</p>
+  <form id="contactForm" style="max-width:600px; margin:auto; display:grid; gap:15px;">
+    <input type="text" id="name" placeholder="Nombre" required style="padding:10px; border-radius:5px; border:1px solid #ccc; width:100%;">
+    <input type="tel" id="phone" placeholder="Teléfono" required style="padding:10px; border-radius:5px; border:1px solid #ccc; width:100%;">
+    <input type="email" id="email" placeholder="Correo electrónico" required style="padding:10px; border-radius:5px; border:1px solid #ccc; width:100%;">
+    <textarea id="message" placeholder="Mensaje" rows="5" required style="padding:10px; border-radius:5px; border:1px solid #ccc; width:100%;"></textarea>
+    <button type="submit" class="btn" style="justify-content:center;">Enviar por WhatsApp</button>
+  </form>
+</section>
 
-        prevBtn.addEventListener('click', () => {
-            index = (index -1 + cards.length) % cards.length;
-            updateCarousel();
-        });
+<footer>
+  <p>&copy; 2025 Mantenimiento y Reparación de Concentradores de Oxígeno. Todos los derechos reservados.</p>
+  <p style="margin-top: 10px; font-weight: bold;">Servicio a domicilio disponible en CDMX y zona metropolitana</p>
+</footer>
 
-        nextBtn.addEventListener('click', () => {
-            index = (index +1) % cards.length;
-            updateCarousel();
-        });
+<a href="https://wa.me/525651546640" class="whatsapp-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
 
-        // Agregar eventos a los indicadores
-        indicators.forEach(indicator => {
-            indicator.addEventListener('click', () => {
-                index = parseInt(indicator.getAttribute('data-index'));
-                updateCarousel();
-            });
-        });
+<a href="tel:+525651546640" class="call-float">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="55" height="55"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.48 2.53.74 3.88.74a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 22 2 13.93 2 4.5a1 1 0 011-1H6.5a1 1 0 011 1c0 1.35.26 2.67.74 3.88a1 1 0 01-.21 1.11l-2.2 2.2z"/></svg>
+</a>
 
-        // Avance automático cada 5 segundos
-        setInterval(() => {
-            index = (index +1) % cards.length;
-            updateCarousel();
-        }, 5000);
-    </script>
+<script>
+// Animación al hacer scroll
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+sections.forEach(section => observer.observe(section));
+
+// Formulario WhatsApp
+const contactForm = document.getElementById('contactForm');
+contactForm.addEventListener('submit', function(e){
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
+  const whatsappNumber = '525651546640';
+  const text = `Hola, mi nombre es ${name}. Mi teléfono es ${phone} y mi correo es ${email}. Mensaje: ${message}`;
+  const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+  window.open(url, '_blank');
+});
+
+// Carrusel de opiniones
+const track = document.querySelector('.carousel-track');
+const cards = document.querySelectorAll('.carousel-card');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+const indicators = document.querySelectorAll('.carousel-indicator');
+let index = 0;
+
+function updateCarousel() {
+  track.style.transform = `translateX(-${index * 100}%)`;
+  
+  // Actualizar indicadores
+  indicators.forEach((indicator, i) => {
+    if (i === index) {
+      indicator.classList.add('active');
+    } else {
+      indicator.classList.remove('active');
+    }
+  });
+}
+
+prevBtn.addEventListener('click', () => {
+  index = (index -1 + cards.length) % cards.length;
+  updateCarousel();
+});
+
+nextBtn.addEventListener('click', () => {
+  index = (index +1) % cards.length;
+  updateCarousel();
+});
+
+// Indicadores del carrusel
+indicators.forEach(indicator => {
+  indicator.addEventListener('click', () => {
+    index = parseInt(indicator.getAttribute('data-index'));
+    updateCarousel();
+  });
+});
+
+// Avance automático cada 5 segundos
+setInterval(() => {
+  index = (index +1) % cards.length;
+  updateCarousel();
+}, 5000);
+</script>
+
 </body>
 </html>
