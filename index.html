@@ -39,6 +39,9 @@ header {
   text-align: center;
   position: relative;
   overflow: hidden;
+  background-image: url("img/header.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 header::before {
@@ -48,8 +51,7 @@ header::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
-  background-size: cover;
+  background: rgba(0, 87, 146, 0.8);
 }
 
 header h1 {
@@ -231,17 +233,12 @@ section.visible {
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
-.card-icon {
-  width: 70px;
-  height: 70px;
-  margin: 0 auto 20px;
-  background: var(--light);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary);
-  font-size: 1.8rem;
+.card img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  height: 180px;
+  object-fit: cover;
 }
 
 .card h3 {
@@ -597,7 +594,6 @@ footer p {
 }
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
@@ -606,16 +602,16 @@ footer p {
   <p>Servicio técnico especializado con responsabilidad y compromiso</p>
   
   <div class="domicilio-badge">
-    <i class="fas fa-home"></i> SERVICIO A DOMICILIO EN CDMX Y ZONA METROPOLITANA
+    SERVICIO A DOMICILIO EN CDMX Y ZONA METROPOLITANA
   </div>
   
   <div class="header-buttons">
     <a href="tel:+525651546640" class="btn">
-      <i class="fas fa-phone-alt"></i>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.48 2.53.74 3.88.74a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 22 2 13.93 2 4.5a1 1 0 011-1H6.5a1 1 0 011 1c0 1.35.26 2.67.74 3.88a1 1 0 01-.21 1.11l-2.2 2.2z"/></svg>
       Llamar ahora
     </a>
     <a href="https://wa.me/525651546640" class="btn btn-whatsapp">
-      <i class="fab fa-whatsapp"></i>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893-.001-3.189-1.262-6.189-3.553-8.449"/></svg>
       Contactar por WhatsApp
     </a>
   </div>
@@ -636,20 +632,20 @@ footer p {
   </div>
   <div class="two-columns">
     <div>
-      <h3><i class="fas fa-clipboard-check"></i> Diagnóstico Profesional</h3>
-      <p>Evaluación exhaustiva de todos los componentes del concentrador para identificar posibles fallas y prevenir problemas futuros.</p>
+      <h3>Revisión completa del equipo</h3>
+      <p>Verificamos el funcionamiento del compresor, filtros, flujo de oxígeno y todos los componentes críticos.</p>
       
-      <h3><i class="fas fa-spray-can"></i> Limpieza y Desinfección</h3>
-      <p>Proceso completo de limpieza y desinfección con productos especializados que garantizan la pureza del oxígeno suministrado.</p>
+      <h3>Limpieza y desinfección profesional</h3>
+      <p>Eliminamos bacterias y partículas acumuladas para garantizar un oxígeno puro y seguro.</p>
       
-      <h3><i class="fas fa-tools"></i> Reparación y Mantenimiento</h3>
-      <p>Reparación de componentes y reemplazo de piezas con repuestos originales para asegurar la máxima durabilidad del equipo.</p>
+      <h3>Reparación y reemplazo de piezas</h3>
+      <p>Cambiamos filtros, válvulas y otros accesorios esenciales para prolongar la vida de tu concentrador.</p>
       
-      <h3><i class="fas fa-truck"></i> Servicio a Domicilio</h3>
-      <p>Nuestro equipo técnico se desplaza hasta su ubicación para realizar el servicio, evitando traslados innecesarios del equipo médico.</p>
+      <h3>Servicio a domicilio</h3>
+      <p>Nos desplazamos hasta tu hogar u hospital para realizar el mantenimiento sin que tengas que mover el equipo.</p>
     </div>
     <div>
-      <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Técnico realizando mantenimiento de equipo médico">
+      <img src="img/servicio_concentrador.jpg" alt="Servicio concentrador">
     </div>
   </div>
 </section>
@@ -661,32 +657,24 @@ footer p {
   </div>
   <div class="services-grid">
     <div class="card">
-      <div class="card-icon">
-        <i class="fas fa-prescription-bottle"></i>
-      </div>
+      <img src="img/limpieza.jpg" alt="Mantenimiento">
       <h3>Limpieza y Desinfección</h3>
-      <p>Eliminación de bacterias y partículas para garantizar un flujo de oxígeno puro y seguro para el paciente.</p>
+      <p>Garantizamos un flujo de oxígeno seguro y libre de contaminantes.</p>
     </div>
     <div class="card">
-      <div class="card-icon">
-        <i class="fas fa-filter"></i>
-      </div>
-      <h3>Cambio de Filtros</h3>
-      <p>Reemplazo de filtros y componentes esenciales para mantener la eficiencia y pureza del oxígeno.</p>
+      <img src="img/filtros.jpg" alt="Cambio de filtros">
+      <h3>Cambio de Filtros y Accesorios</h3>
+      <p>Reemplazo de filtros, mangueras y piezas esenciales para tu equipo.</p>
     </div>
     <div class="card">
-      <div class="card-icon">
-        <i class="fas fa-toolbox"></i>
-      </div>
+      <img src="img/reparacion.jpg" alt="Reparación">
       <h3>Reparación de Fallas</h3>
-      <p>Diagnóstico y solución de problemas técnicos para restaurar el funcionamiento óptimo del equipo.</p>
+      <p>Solucionamos problemas técnicos para que tu concentrador funcione como nuevo.</p>
     </div>
     <div class="card">
-      <div class="card-icon">
-        <i class="fas fa-home-heart"></i>
-      </div>
+      <img src="img/domicilio.jpg" alt="Servicio a domicilio">
       <h3>Servicio a Domicilio</h3>
-      <p>Atención técnica especializada en la comodidad de su hogar, sin costos adicionales por desplazamiento.</p>
+      <p>Llegamos hasta tu hogar u hospital para realizar el mantenimiento sin costo adicional.</p>
     </div>
   </div>
 </section>
@@ -698,32 +686,24 @@ footer p {
   </div>
   <div class="benefits-grid">
     <div class="card">
-      <div class="card-icon">
-        <i class="fas fa-shield-alt"></i>
-      </div>
-      <h3>Seguridad Garantizada</h3>
-      <p>Previene fallas críticas que podrían comprometer la salud del paciente durante la terapia de oxígeno.</p>
+      <img src="img/ventaja_durabilidad.jpg" alt="Durabilidad">
+      <h3>Mayor Durabilidad</h3>
+      <p>El mantenimiento regular prolonga la vida útil de tu equipo.</p>
     </div>
     <div class="card">
-      <div class="card-icon">
-        <i class="fas fa-chart-line"></i>
-      </div>
-      <h3>Rendimiento Óptimo</h3>
-      <p>Mantiene la eficiencia del equipo, asegurando el flujo y concentración de oxígeno adecuados.</p>
+      <img src="img/ventaja_seguridad.jpg" alt="Seguridad">
+      <h3>Funcionamiento Seguro</h3>
+      <p>Previene fallas que puedan poner en riesgo la salud de los usuarios.</p>
     </div>
     <div class="card">
-      <div class="card-icon">
-        <i class="fas fa-piggy-bank"></i>
-      </div>
-      <h3>Economía a Largo Plazo</h3>
-      <p>Evita reparaciones costosas y prolonga la vida útil del equipo, reduciendo costos de reemplazo.</p>
+      <img src="img/ventaja_rendimiento.jpg" alt="Rendimiento">
+      <h3>Mejor Rendimiento</h3>
+      <p>Garantiza un flujo constante y óptimo de oxígeno.</p>
     </div>
     <div class="card">
-      <div class="card-icon">
-        <i class="fas fa-file-contract"></i>
-      </div>
-      <h3>Cumplimiento de Normativas</h3>
-      <p>Mantenimiento acorde a estándares médicos y normativas de seguridad para equipos de salud.</p>
+      <img src="img/ventaja_ahorro.jpg" alt="Ahorro">
+      <h3>Ahorro Económico</h3>
+      <p>Evita reparaciones costosas o reemplazo prematuro de equipos.</p>
     </div>
   </div>
 </section>
@@ -736,38 +716,46 @@ footer p {
   <div class="carousel-container">
     <div class="carousel-track">
       <div class="carousel-card">
-        <h3>Roberto Hernández</h3>
-        <p>"El servicio a domicilio fue excepcional. El técnico fue puntual, profesional y explicó cada paso del proceso. Mi concentrador funciona perfectamente después del mantenimiento."</p>
+        <h3>Juan Pérez</h3>
+        <p>"Excelente servicio, mi concentrador funciona como nuevo. Muy profesionales y rápidos. El servicio a domicilio fue muy conveniente."</p>
         <div class="carousel-rating">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          ⭐⭐⭐⭐⭐
         </div>
       </div>
       <div class="carousel-card">
-        <h3>María González</h3>
-        <p>"Como cuidadora de un adulto mayor, valoro mucho la seriedad y responsabilidad del servicio. El equipo quedó como nuevo y me siento más segura al administrar la oxigenoterapia."</p>
+        <h3>María López</h3>
+        <p>"Me encantó la atención a domicilio. Recomendable 100% y confiable para adultos mayores. No tuve que mover el equipo."</p>
         <div class="carousel-rating">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          ⭐⭐⭐⭐⭐
         </div>
       </div>
       <div class="carousel-card">
-        <h3>Carlos Mendoza</h3>
-        <p>"He utilizado sus servicios por más de dos años y siempre han sido confiables. El mantenimiento preventivo ha evitado que mi equipo falle en momentos críticos."</p>
+        <h3>Carlos Martínez</h3>
+        <p>"Realizar mantenimiento regularmente me ha ahorrado dinero y problemas. Muy buen equipo y el servicio a domicilio es un plus."</p>
         <div class="carousel-rating">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          ⭐⭐⭐⭐⭐
+        </div>
+      </div>
+      <div class="carousel-card">
+        <h3>Luisa Gómez</h3>
+        <p>"Profesionales y amables. La limpieza y desinfección fue impecable. El servicio a domicilio me salvó mucho tiempo."</p>
+        <div class="carousel-rating">
+          ⭐⭐⭐⭐⭐
         </div>
       </div>
     </div>
     <div class="carousel-controls">
       <button class="carousel-btn" id="prev">
-        <i class="fas fa-chevron-left"></i> Anterior
+        ◀ Anterior
       </button>
       <div class="carousel-indicators">
         <div class="carousel-indicator active" data-index="0"></div>
         <div class="carousel-indicator" data-index="1"></div>
         <div class="carousel-indicator" data-index="2"></div>
+        <div class="carousel-indicator" data-index="3"></div>
       </div>
       <button class="carousel-btn" id="next">
-        Siguiente <i class="fas fa-chevron-right"></i>
+        Siguiente ▶
       </button>
     </div>
   </div>
@@ -800,23 +788,23 @@ footer p {
     </div>
     
     <button type="submit" class="submit-btn">
-      <i class="fab fa-whatsapp"></i> Enviar mensaje por WhatsApp
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      Enviar mensaje por WhatsApp
     </button>
   </form>
 </section>
 
 <footer>
   <p>&copy; 2025 Mantenimiento y Reparación de Concentradores de Oxígeno. Todos los derechos reservados.</p>
-  <p><i class="fas fa-map-marker-alt"></i> Servicio a domicilio en Ciudad de México y zona metropolitana</p>
-  <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8;">Equipo médico certificado y técnicos especializados</p>
+  <p>Servicio a domicilio disponible en Ciudad de México y zona metropolitana</p>
 </footer>
 
 <a href="https://wa.me/525651546640" class="whatsapp-float" target="_blank">
-  <i class="fab fa-whatsapp"></i>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
 </a>
 
 <a href="tel:+525651546640" class="call-float">
-  <i class="fas fa-phone-alt"></i>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="35" height="35"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.48 2.53.74 3.88.74a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 22 2 13.93 2 4.5a1 1 0 011-1H6.5a1 1 0 011 1c0 1.35.26 2.67.74 3.88a1 1 0 01-.21 1.11l-2.2 2.2z"/></svg>
 </a>
 
 <script>
