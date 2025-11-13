@@ -48,14 +48,22 @@ footer svg { width:20px; height:20px; margin-right:5px; }
 .whatsapp-float:hover { transform: scale(1.1); }
 .whatsapp-float img { width:55px; height:55px; }
 
-.carousel { position:relative; max-width:600px; margin:auto; overflow:hidden; border-radius:10px; }
+.call-float { position:fixed; width:90px; height:90px; bottom:120px; right:20px; background-color:#0077b6; color:#fff; border-radius:50%; text-align:center; font-size:36px; box-shadow:2px 2px 5px #999; z-index:100; display:flex; align-items:center; justify-content:center; transition: transform 0.3s ease; }
+.call-float:hover { transform: scale(1.1); }
+.call-float img { width:55px; height:55px; }
+
+.carousel { position:relative; max-width:600px; margin:auto; overflow:hidden; border-radius:10px; background: linear-gradient(145deg, #ffffff, #e6e6e6); box-shadow: 0 8px 20px rgba(0,0,0,0.15); padding: 20px; }
 .carousel-track { display:flex; transition: transform 0.5s ease-in-out; }
-.carousel-card { min-width:100%; box-sizing:border-box; padding:20px; background:white; margin-right:10px; box-shadow:0 2px 6px rgba(0,0,0,0.15); border-radius:10px; text-align:center; }
-.carousel-card h3 { margin-bottom:10px; }
-.carousel-card p { margin-bottom:10px; font-style:italic; }
-.carousel-buttons { text-align:center; margin-top:10px; }
-.carousel-buttons button { background:var(--secondary); color:white; border:none; padding:8px 12px; margin:0 5px; border-radius:5px; cursor:pointer; transition: transform 0.3s; }
-.carousel-buttons button:hover { transform: scale(1.1); }
+.carousel-card { min-width:100%; box-sizing:border-box; padding:25px; background:white; margin-right:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1); border-radius:10px; text-align:center; border-left: 5px solid var(--secondary); position: relative; }
+.carousel-card h3 { margin-bottom:10px; color: var(--primary); font-size: 1.3rem; }
+.carousel-card p { margin-bottom:10px; font-style:italic; line-height: 1.5; }
+.carousel-card p:last-of-type { color: #ffd60a; font-size: 1.2rem; letter-spacing: 2px; }
+.carousel-buttons { text-align:center; margin-top:20px; }
+.carousel-buttons button { background:var(--secondary); color:white; border:none; padding:10px 15px; margin:0 8px; border-radius:50%; cursor:pointer; transition: all 0.3s; font-weight: bold; width: 45px; height: 45px; display: inline-flex; align-items: center; justify-content: center; }
+.carousel-buttons button:hover { transform: scale(1.1); background: var(--primary); }
+.carousel-indicators { display: flex; justify-content: center; margin-top: 15px; }
+.carousel-indicator { width: 12px; height: 12px; border-radius: 50%; background: #ccc; margin: 0 5px; cursor: pointer; transition: background 0.3s; }
+.carousel-indicator.active { background: var(--secondary); }
 
 @keyframes fadeInDown { from {opacity:0; transform: translateY(-20px);} to {opacity:1; transform: translateY(0);} }
 @keyframes fadeInUp { from {opacity:0; transform: translateY(20px);} to {opacity:1; transform: translateY(0);} }
@@ -65,16 +73,18 @@ footer svg { width:20px; height:20px; margin-right:5px; }
   header h1 { font-size:2.2rem; padding:12px 15px; }
   header p { font-size:1.1rem; padding:8px 10px; }
   .btn { font-size:1rem; padding:10px 20px; }
-  .whatsapp-float { width:75px; height:75px; font-size:32px; }
-  .whatsapp-float img { width:45px; height:45px; }
+  .whatsapp-float, .call-float { width:75px; height:75px; font-size:32px; }
+  .whatsapp-float img, .call-float img { width:45px; height:45px; }
   .two-columns { grid-template-columns:1fr !important; }
+  .call-float { bottom: 105px; }
 }
 @media (max-width: 480px) {
   header h1 { font-size:1.8rem; padding:10px 12px; }
   header p { font-size:1rem; padding:6px 8px; }
   .btn { font-size:0.95rem; padding:8px 16px; }
-  .whatsapp-float { width:65px; height:65px; font-size:28px; }
-  .whatsapp-float img { width:40px; height:40px; }
+  .whatsapp-float, .call-float { width:65px; height:65px; font-size:28px; }
+  .whatsapp-float img, .call-float img { width:40px; height:40px; }
+  .call-float { bottom: 95px; }
 }
 </style>
 </head>
@@ -83,10 +93,16 @@ footer svg { width:20px; height:20px; margin-right:5px; }
 <header>
   <h1>Mantenimiento y Reparación de Concentradores de Oxígeno</h1>
   <p>Servicio confiable a domicilio en Ciudad de México y zona metropolitana</p>
-  <a href="tel:+525651546640" class="btn">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.48 2.53.74 3.88.74a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 22 2 13.93 2 4.5a1 1 0 011-1H6.5a1 1 0 011 1c0 1.35.26 2.67.74 3.88a1 1 0 01-.21 1.11l-2.2 2.2z"/></svg>
-    Llamar ahora
-  </a>
+  <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+    <a href="tel:+525651546640" class="btn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.48 2.53.74 3.88.74a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 22 2 13.93 2 4.5a1 1 0 011-1H6.5a1 1 0 011 1c0 1.35.26 2.67.74 3.88a1 1 0 01-.21 1.11l-2.2 2.2z"/></svg>
+      Llamar ahora
+    </a>
+    <a href="https://wa.me/525651546640" class="btn" style="background-color: #25d366;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893-.001-3.189-1.262-6.189-3.553-8.449"/></svg>
+      WhatsApp
+    </a>
+  </div>
 </header>
 
 <section>
@@ -187,6 +203,12 @@ footer svg { width:20px; height:20px; margin-right:5px; }
       <button id="prev">◀</button>
       <button id="next">▶</button>
     </div>
+    <div class="carousel-indicators">
+      <div class="carousel-indicator active" data-index="0"></div>
+      <div class="carousel-indicator" data-index="1"></div>
+      <div class="carousel-indicator" data-index="2"></div>
+      <div class="carousel-indicator" data-index="3"></div>
+    </div>
   </div>
 </section>
 
@@ -208,6 +230,10 @@ footer svg { width:20px; height:20px; margin-right:5px; }
 
 <a href="https://wa.me/525651546640" class="whatsapp-float" target="_blank">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+<a href="tel:+525651546640" class="call-float" target="_blank">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="55" height="55"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.48 2.53.74 3.88.74a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 22 2 13.93 2 4.5a1 1 0 011-1H6.5a1 1 0 011 1c0 1.35.26 2.67.74 3.88a1 1 0 01-.21 1.11l-2.2 2.2z"/></svg>
 </a>
 
 <script>
@@ -241,10 +267,20 @@ const track = document.querySelector('.carousel-track');
 const cards = document.querySelectorAll('.carousel-card');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
+const indicators = document.querySelectorAll('.carousel-indicator');
 let index = 0;
 
 function updateCarousel() {
   track.style.transform = `translateX(-${index * 100}%)`;
+  
+  // Actualizar indicadores
+  indicators.forEach((indicator, i) => {
+    if (i === index) {
+      indicator.classList.add('active');
+    } else {
+      indicator.classList.remove('active');
+    }
+  });
 }
 
 prevBtn.addEventListener('click', () => {
@@ -255,6 +291,14 @@ prevBtn.addEventListener('click', () => {
 nextBtn.addEventListener('click', () => {
   index = (index +1) % cards.length;
   updateCarousel();
+});
+
+// Agregar eventos a los indicadores
+indicators.forEach(indicator => {
+  indicator.addEventListener('click', () => {
+    index = parseInt(indicator.getAttribute('data-index'));
+    updateCarousel();
+  });
 });
 
 // Avance automático cada 5 segundos
