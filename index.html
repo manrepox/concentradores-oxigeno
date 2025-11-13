@@ -48,11 +48,6 @@ footer svg { width:20px; height:20px; margin-right:5px; }
 .whatsapp-float:hover { transform: scale(1.1); }
 .whatsapp-float img { width:55px; height:55px; }
 
-/* Botón flotante de llamada - agregado minimal para no afectar nada más */
-.call-float { position:fixed; width:90px; height:90px; bottom:20px; right:120px; background-color:#00b4d8; color:#fff; border-radius:50%; text-align:center; font-size:36px; box-shadow:2px 2px 5px #999; z-index:100; display:flex; align-items:center; justify-content:center; transition: transform 0.3s ease; }
-.call-float:hover { transform: scale(1.1); }
-.call-float img { width:55px; height:55px; }
-
 .carousel { position:relative; max-width:600px; margin:auto; overflow:hidden; border-radius:10px; }
 .carousel-track { display:flex; transition: transform 0.5s ease-in-out; }
 .carousel-card { min-width:100%; box-sizing:border-box; padding:20px; background:white; margin-right:10px; box-shadow:0 2px 6px rgba(0,0,0,0.15); border-radius:10px; text-align:center; }
@@ -72,8 +67,6 @@ footer svg { width:20px; height:20px; margin-right:5px; }
   .btn { font-size:1rem; padding:10px 20px; }
   .whatsapp-float { width:75px; height:75px; font-size:32px; }
   .whatsapp-float img { width:45px; height:45px; }
-  .call-float { width:75px; height:75px; font-size:32px; right:110px; }
-  .call-float img { width:45px; height:45px; }
   .two-columns { grid-template-columns:1fr !important; }
 }
 @media (max-width: 480px) {
@@ -82,8 +75,6 @@ footer svg { width:20px; height:20px; margin-right:5px; }
   .btn { font-size:0.95rem; padding:8px 16px; }
   .whatsapp-float { width:65px; height:65px; font-size:28px; }
   .whatsapp-float img { width:40px; height:40px; }
-  .call-float { width:65px; height:65px; font-size:28px; right:105px; }
-  .call-float img { width:40px; height:40px; }
 }
 </style>
 </head>
@@ -95,14 +86,6 @@ footer svg { width:20px; height:20px; margin-right:5px; }
   <a href="tel:+525651546640" class="btn">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.48 2.53.74 3.88.74a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 22 2 13.93 2 4.5a1 1 0 011-1H6.5a1 1 0 011 1c0 1.35.26 2.67.74 3.88a1 1 0 01-.21 1.11l-2.2 2.2z"/></svg>
     Llamar ahora
-  </a>
-
-  <!-- Botón de WhatsApp en el banner (solo agregado) -->
-  <a href="https://wa.me/525651546640" target="_blank" class="btn" style="margin-left:10px; background:#25d366;">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" style="width:20px; height:20px; margin-right:8px;">
-      <path d="M20.52 3.48A11.93 11.93 0 0012 0C5.37 0 0 5.37 0 12c0 2.12.55 4.15 1.6 5.96L0 24l6.21-1.63A11.97 11.97 0 0012 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22a9.93 9.93 0 01-5.06-1.39l-.36-.21-3.69.97.99-3.59-.23-.37A9.95 9.95 0 012 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10zm5.34-7.15c-.29-.14-1.72-.84-1.99-.93-.27-.1-.46-.14-.65.14-.19.29-.75.93-.92 1.12-.17.19-.34.21-.63.07-.29-.14-1.22-.45-2.32-1.45-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.59.14-.14.29-.34.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.65-1.57-.9-2.15-.24-.58-.49-.5-.65-.51h-.55c-.19 0-.5.07-.76.36-.26.29-1 1-1 2.43s1.02 2.82 1.16 3.01c.14.19 2.01 3.07 4.88 4.31.68.29 1.21.46 1.62.59.68.22 1.29.19 1.78.12.54-.08 1.72-.7 1.97-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.19-.55-.33z"/>
-    </svg>
-    WhatsApp
   </a>
 </header>
 
@@ -225,11 +208,6 @@ footer svg { width:20px; height:20px; margin-right:5px; }
 
 <a href="https://wa.me/525651546640" class="whatsapp-float" target="_blank">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-</a>
-
-<!-- Botón flotante de llamada (agregado) -->
-<a href="tel:+525651546640" class="call-float">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Phone_font_awesome.svg" alt="Llamar">
 </a>
 
 <script>
